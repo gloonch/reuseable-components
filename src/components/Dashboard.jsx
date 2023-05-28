@@ -4,7 +4,7 @@ import { NavLink, Outlet, isActive } from 'react-router-dom'
 export default function Dashboard() {
   return (
     <>
-        <div className='flex flex-row justify-between max-w-lg items-center mt-20 ms-80'>
+        <div className='items-center justify-between space-x-8 max-w-full mt-10 ms-20'>
             {/* { isAuthenticated && webinar... } */}
             <NavLink to={'webinar'} className={({ isActive }) => isActive ? 'text-xl font-bold underline' : 'text-md'} >
                 Webinar's Dashboard
@@ -13,7 +13,9 @@ export default function Dashboard() {
                 Video player's Dashboard
             </NavLink>
         </div>
-        <Outlet />
+        <div className='w-full items-center p-30'>
+            <Outlet />
+        </div>
     </>
   )
 }

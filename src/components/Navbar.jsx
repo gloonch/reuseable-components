@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   return (
-    <nav className=" mt-6 rounded-3xl relative container mx-auto p-6 bg-slate-200">
+    <nav className=" mt-6 rounded-3xl relative mx-6 p-6 bg-slate-200">
         <div className="flex items-center justify-between">
             <div className="flex items-center space-x-20">
                 {/* <img src="images/logo.svg" alt="" /> */}

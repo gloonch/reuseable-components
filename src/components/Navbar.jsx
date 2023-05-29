@@ -11,8 +11,8 @@ export default function Navbar() {
                     <NavLink to={'/'} className="opacity-70 hover:opacity-100">
                         Home
                     </NavLink>
-                    <NavLink to={'/dashboard'} className="opacity-70 hover:opacity-100">
-                        Dashboard
+                    <NavLink to={'/video'} className="opacity-70 hover:opacity-100">
+                        Video
                     </NavLink>
                     
                 </div>

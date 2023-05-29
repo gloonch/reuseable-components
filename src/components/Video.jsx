@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink, Outlet, isActive } from 'react-router-dom'
 
-export default function Dashboard() {
+export default function Video() {
   return (
     <>
         <div className='items-center justify-between space-x-8 max-w-full mt-10 ms-20'>

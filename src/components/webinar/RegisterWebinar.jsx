@@ -27,22 +27,6 @@ export default function RegisterWebinar() {
         if (name === null || name === "" || video === null || video === [] || date === null || date === [] )
             return alert('Please fill the fields above')
         
-        // let formdata = new FormData();
-        // formdata.append('videos', video);
-        // formdata.append('name', name);
-        // formdata.append('date', date);
-        // formdata.append('user', 'gloonch');
-
-        // axios.post(BACKEND_URI + '/api/v1/media/', formdata)
-        //     .then(success => {
-        //         alert('Webinar scheduled successfuly.');
-        //     })
-        //     .catch(error => {
-        //         alert('Error Happened!');
-        //     })
-        //     .finally(f=> {
-        //         window.location.reload();
-        //     });
 
     }
 

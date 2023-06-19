@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Video from "./components/Video";
 import RegisterWebinar from "./components/webinar/RegisterWebinar";
+import DateComparison from "./components/DateComparison";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
             <Route path="webinar" element={<RegisterWebinar />} />
             <Route path="videoplayer" element={<h1>Player Component</h1>} />
           </Route>
-          <Route path="/" element={<Home />} />
+          <Route path="/date" element={<DateComparison />} />
           <Route path="*" element={<h1 className="justify-center">Error</h1>} />
         </Routes>
       </BrowserRouter>

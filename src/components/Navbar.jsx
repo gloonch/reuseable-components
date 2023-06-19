@@ -14,13 +14,16 @@ export default function Navbar() {
                     <NavLink to={'/video'} className="opacity-70 hover:opacity-100">
                         Video
                     </NavLink>
+                    <NavLink to={'/date'} className="opacity-70 hover:opacity-100">
+                        Date Comparison
+                    </NavLink>
                     
                 </div>
             </div>
-            <div className=" items-center space-x-6 font-bold text-grayishViolet ">
+            {/* <div className=" items-center space-x-6 font-bold text-grayishViolet ">
                 <a href='#' className="font-bold opacity-50 hover:opacity-90">Login</a>
                 <a href="#" className="px-8 py-3 font-bold opacity-50 hover:opacity-90">Sign Up</a>
-            </div>
+            </div> */}
              
         </div>
     </nav>

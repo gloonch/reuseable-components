@@ -15,6 +15,7 @@ function App() {
             <Route path="webinar" element={<RegisterWebinar />} />
             <Route path="videoplayer" element={<h1>Player Component</h1>} />
           </Route>
+          <Route path="/" element={<Home />} />
           <Route path="*" element={<h1 className="justify-center">Error</h1>} />
         </Routes>
       </BrowserRouter>

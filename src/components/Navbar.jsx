@@ -17,6 +17,9 @@ export default function Navbar() {
                     <NavLink to={'/date'} className="opacity-70 hover:opacity-100">
                         Date Comparison
                     </NavLink>
+                    <NavLink to={'/skeleton'} className="opacity-70 hover:opacity-100">
+                        Skeleton
+                    </NavLink>
                     
                 </div>
             </div>

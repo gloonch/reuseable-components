@@ -20,6 +20,9 @@ export default function Navbar() {
                     <NavLink to={'/skeleton'} className="opacity-70 hover:opacity-100">
                         Skeleton
                     </NavLink>
+                    <NavLink to={'/lottie'} className="opacity-70 hover:opacity-100">
+                        Lottie
+                    </NavLink>
                     
                 </div>
             </div>

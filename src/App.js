@@ -5,6 +5,7 @@ import Video from "./components/Video";
 import RegisterWebinar from "./components/webinar/RegisterWebinar";
 import DateComparison from "./components/DateComparison";
 import Skeleton from "./components/Skeleton";
+import LottieAnimation from "./components/LottieAnimation";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           </Route>
           <Route path="/date" element={<DateComparison />} />
           <Route path="/skeleton" element={<Skeleton />} />
+          <Route path="/lottie" element={<LottieAnimation />} />
           <Route path="*" element={<h1 className="justify-center">Error</h1>} />
         </Routes>
       </BrowserRouter>

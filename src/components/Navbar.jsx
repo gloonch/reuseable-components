@@ -23,6 +23,9 @@ export default function Navbar() {
                     <NavLink to={'/lottie'} className="opacity-70 hover:opacity-100">
                         Lottie
                     </NavLink>
+                    <NavLink to={'/parallax'} className="opacity-70 hover:opacity-100">
+                        Parallax
+                    </NavLink>
                     
                 </div>
             </div>

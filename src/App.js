@@ -6,6 +6,7 @@ import RegisterWebinar from "./components/webinar/RegisterWebinar";
 import DateComparison from "./components/DateComparison";
 import Skeleton from "./components/Skeleton";
 import LottieAnimation from "./components/LottieAnimation";
+import MParallax from "./components/mParallax";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/date" element={<DateComparison />} />
           <Route path="/skeleton" element={<Skeleton />} />
           <Route path="/lottie" element={<LottieAnimation />} />
+          <Route path="/parallax" element={<MParallax />} />
           <Route path="*" element={<h1 className="justify-center">Error</h1>} />
         </Routes>
       </BrowserRouter>

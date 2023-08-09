@@ -5,6 +5,5 @@ const router = express.Router();
 router.post('/signup', usersController.signUp);
 router.post('/login', usersController.login);
 router.get('/user', usersController.verifyToken, usersController.getUser);
-// verify token after building the frontend
-
+router.get('/refresh', usersController.refreshToken, usersController.verifyToken, usersController.getUser)
 module.exports = router;

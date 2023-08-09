@@ -49,6 +49,11 @@ const login = async (req, res, next) => {
 
     const token = jwt.sign({id: existingUser._id}, process.env.JWT_SECRET_KEY, {expiresIn: '30s'});
 
+    console.log("Generated token\n", token)
+    if (req.cookies[`${existingUser._id}`]){
+        req.cookies[`${existingUser._id}`] = ''
+    }
+
     res.cookie(String(existingUser._id), token, {
         path: '/',
         expires: new Date(Date.now() + 1000 * 30),
@@ -64,7 +69,7 @@ const verifyToken = async (req, res, next) => {
     const token = cookies.split("=")[1];
 
     if (!token)
-        return res.status(404).json({message: "No token found."})
+        res.status(404).json({message: "No token found."})
 
     jwt.verify(String(token), process.env.JWT_SECRET_KEY, (err, user) => {
         if (err)
@@ -91,7 +96,42 @@ const getUser = async (req, res, next) => {
     return res.status(200).json(user)
 }
 
+const refreshToken = async (req, res, next) => {
+    const cookies = req.headers.cookie;
+    const prevToken = cookies.split("=")[1];
+
+    if (!prevToken)
+        return res.status(400).json({message: "Couldn't find token"})
+
+    jwt.verify(String(prevToken), process.env.JWT_SECRET_KEY, (err, user) => {
+        if (err){
+            console.log(err)
+            return res.status(403).json({message: "Authentication failed"})
+        }
+        res.clearCookie(`${user.id}`);
+        req.cookies[`${user.id}`] = "";
+
+        const token = jwt.sign({id: user.id}, process.env.JWT_SECRET_KEY, {
+            expiresIn: '30s'
+        })
+
+        res.cookie(String(user.id), token, {
+            path: '/',
+            expires: new Date(Date.now() + 1000 * 30),
+            httpOnly: true,
+            sameSite: 'lax',
+        });
+        req.id = user.id;
+    })
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+
+
+    next();
+}
+
 exports.signUp = signUp;
 exports.login = login;
 exports.verifyToken = verifyToken;
 exports.getUser = getUser;
+exports.refreshToken = refreshToken;

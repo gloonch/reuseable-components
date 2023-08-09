@@ -7,7 +7,7 @@ const cors = require('cors')
 const usersRouter = require('./routes/UserRoutes');
 
 const app = express();
-app.use(cors())
+app.use(cors({credentials: true, origin: "http://localhost:3000"}))
 app.use(cookieParse());
 app.use(express.json());
 app.use('/api', usersRouter);
@@ -16,8 +16,8 @@ mongoose.connect(process.env.MONGODB_URI,
     { useNewUrlParser: true })
     .then(()=>{
         console.log("MongoDB Connected...")
-        app.listen(3001, ()=>{
-            console.log('Listening to 3001...')
+        app.listen(4000, ()=>{
+            console.log('Listening to 4000')
         })
     })
     .catch(err => {

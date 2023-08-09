@@ -29,10 +29,10 @@ export default function Navbar() {
                     
                 </div>
             </div>
-            {/* <div className=" items-center space-x-6 font-bold text-grayishViolet ">
-                <a href='#' className="font-bold opacity-50 hover:opacity-90">Login</a>
-                <a href="#" className="px-8 py-3 font-bold opacity-50 hover:opacity-90">Sign Up</a>
-            </div> */}
+            <div className=" items-center space-x-6 font-bold text-grayishViolet ">
+                <NavLink to={'login'} className="font-bold opacity-50 hover:opacity-90">Login</NavLink>
+                <NavLink to={'signup'} className="px-8 py-3 font-bold opacity-50 hover:opacity-90">Sign Up</NavLink>
+            </div>
              
         </div>
     </nav>

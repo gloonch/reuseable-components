@@ -7,6 +7,8 @@ import DateComparison from "./components/DateComparison";
 import Skeleton from "./components/Skeleton";
 import LottieAnimation from "./components/LottieAnimation";
 import MParallax from "./components/mParallax";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/skeleton" element={<Skeleton />} />
           <Route path="/lottie" element={<LottieAnimation />} />
           <Route path="/parallax" element={<MParallax />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="*" element={<h1 className="justify-center">Error</h1>} />
         </Routes>
       </BrowserRouter>

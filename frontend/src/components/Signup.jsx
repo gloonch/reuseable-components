@@ -39,11 +39,11 @@ export default function Signup() {
 
     return (
         <div className='p-6 pt-14 flex flex-col items-center'>
-            <form onSubmit={handleSubmit} className='items-center flex flex-col space-y-3 w-200 '>
+            <form onSubmit={handleSubmit} className='items-center flex flex-col space-y-3 w-full '>
                 <p className='text-4xl'>Sign up</p>
-                <input name='name' onChange={handleChange} type="text" value={data.name} className='p-3 rounded-2xl border-2 border-slate-300' placeholder='Name' />
-                <input name='email' onChange={handleChange} type="email" value={data.email} className='p-3 rounded-2xl border-2 border-slate-300' placeholder='Email' />
-                <input name='password' onChange={handleChange} type="password" value={data.password} className='p-3 rounded-2xl border-2 border-slate-300' placeholder='Password' />
+                <input name='name' onChange={handleChange} type="text" value={data.name} className='p-3 w-1/4 rounded-2xl border-2 border-slate-300' placeholder='Name' />
+                <input name='email' onChange={handleChange} type="email" value={data.email} className='p-3 w-1/4 rounded-2xl border-2 border-slate-300' placeholder='Email' />
+                <input name='password' onChange={handleChange} type="password" value={data.password} className='p-3 w-1/4 rounded-2xl border-2 border-slate-300' placeholder='Password' />
 
                 <button className='px-6 py-3 rounded-xl bg-amber-400' type="submit">Signup</button>
             </form>

@@ -9,8 +9,12 @@ import LottieAnimation from "./components/LottieAnimation";
 import MParallax from "./components/mParallax";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
+import {useSelector} from "react-redux";
 
 function App() {
+  const isLoggedIn = useSelector(state => state.isLoggedIn);
+  console.log('is logged in: ' + isLoggedIn)
+
   return (
     <>
       <BrowserRouter>

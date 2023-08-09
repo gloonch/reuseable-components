@@ -1,7 +1,27 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-
+import {useDispatch, useSelector} from "react-redux";
+import axios from "axios";
+import {authActions} from "../store";
+axios.defaults.withCredentials = true;
 export default function Navbar() {
+    const isLoggedIn = useSelector(state => state.isLoggedIn);
+    const dispatch = useDispatch();
+    const sendLogoutRequest = async () => {
+        const res = await axios.post('http://localhost:4000/api/logout', null, {
+            withCredentials: true
+        });
+        if (res.status == 200)
+            return res
+
+        return new Error('Unable to logout. Please try again.');
+    }
+    const handleLogout = () => {
+        sendLogoutRequest().then(() => {
+            dispatch(authActions.logout())
+        });
+    }
+
   return (
     <nav className=" mt-6 rounded-3xl relative mx-6 p-6 bg-slate-200">
         <div className="flex items-center justify-between">
@@ -30,9 +50,16 @@ export default function Navbar() {
                 </div>
             </div>
             <div className=" items-center space-x-6 font-bold text-grayishViolet ">
-                <NavLink to={'login'} className="font-bold opacity-50 hover:opacity-90">Login</NavLink>
-                <NavLink to={'signup'} className="px-8 py-3 font-bold opacity-50 hover:opacity-90">Sign Up</NavLink>
-            </div>
+                {isLoggedIn && (
+                    <NavLink onClick={handleLogout} to={'/'} className="px-8 py-3 font-bold opacity-50 hover:opacity-90">Log out</NavLink>
+                )}
+                {!isLoggedIn && (
+                    <>
+                        <NavLink to={'login'} className="font-bold opacity-50 hover:opacity-90">Login</NavLink>
+                        <NavLink to={'signup'} className="px-8 py-3 font-bold opacity-50 hover:opacity-90">Sign Up</NavLink>
+                    </>
+                )}
+        </div>
              
         </div>
     </nav>

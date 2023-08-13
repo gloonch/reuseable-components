@@ -46,7 +46,13 @@ export default function Navbar() {
                     <NavLink to={'/parallax'} className="opacity-70 hover:opacity-100">
                         Parallax
                     </NavLink>
-                    
+                    <NavLink to={'/modal'} className="opacity-70 hover:opacity-100">
+                        Modal
+                    </NavLink>
+                    <NavLink to={'/custom-hook'} className="opacity-70 hover:opacity-100">
+                        custom-hook
+                    </NavLink>
+
                 </div>
             </div>
             <div className=" items-center space-x-6 font-bold text-grayishViolet ">

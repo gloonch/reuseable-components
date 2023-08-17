@@ -52,6 +52,9 @@ export default function Navbar() {
                     <NavLink to={'/custom-hook'} className="opacity-70 hover:opacity-100">
                         custom-hook
                     </NavLink>
+                    <NavLink to={'/formik'} className="opacity-70 hover:opacity-100">
+                        formik
+                    </NavLink>
 
                 </div>
             </div>

@@ -12,6 +12,7 @@ import Signup from "./components/Signup";
 import {useSelector} from "react-redux";
 import Modals from "./components/Modals";
 import CustomHookSample from "./components/CustomHookSample";
+import FormExample from "./components/FormExample";
 
 function App() {
   const isLoggedIn = useSelector(state => state.isLoggedIn);
@@ -35,6 +36,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/modal" element={<Modals />} />
           <Route path="/custom-hook" element={<CustomHookSample />} />
+          <Route path="/formik" element={<FormExample />} />
           <Route path="*" element={<h1 className="justify-center">Error</h1>} />
         </Routes>
       </BrowserRouter>

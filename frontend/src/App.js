@@ -13,6 +13,7 @@ import {useSelector} from "react-redux";
 import Modals from "./components/Modals";
 import CustomHookSample from "./components/CustomHookSample";
 import FormExample from "./components/FormExample";
+import VideoBackground from "./components/VideoBackground";
 
 function App() {
   const isLoggedIn = useSelector(state => state.isLoggedIn);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/modal" element={<Modals />} />
           <Route path="/custom-hook" element={<CustomHookSample />} />
           <Route path="/formik" element={<FormExample />} />
+          <Route path="/background" element={<VideoBackground />} />
           <Route path="*" element={<h1 className="justify-center">Error</h1>} />
         </Routes>
       </BrowserRouter>

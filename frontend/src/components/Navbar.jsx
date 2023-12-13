@@ -55,6 +55,9 @@ export default function Navbar() {
                     <NavLink to={'/formik'} className="opacity-70 hover:opacity-100">
                         formik
                     </NavLink>
+                    <NavLink to={'/background'} className="opacity-70 hover:opacity-100">
+                        background
+                    </NavLink>
 
                 </div>
             </div>
